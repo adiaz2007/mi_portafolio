@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 
 /// Clase que centraliza toda la configuración del tema de la aplicación.
-/// Utiliza un esquema de colores oscuro con acentos en cian/teal
-/// para lograr un diseño moderno y profesional.
+/// Utiliza un esquema de colores extra oscuro con acentos en cian puro
+/// para lograr un diseño moderno basado en el mockup.
 class AppTheme {
   // ─── Colores principales ─────────────────────────────────────────
-  static const Color primaryColor = Color(0xFF00BCD4);
-  static const Color primaryDark = Color(0xFF00838F);
-  static const Color accentColor = Color(0xFF26C6DA);
-  static const Color backgroundColor = Color(0xFF0D1117);
-  static const Color surfaceColor = Color(0xFF161B22);
-  static const Color cardColor = Color(0xFF1C2333);
-  static const Color textPrimary = Color(0xFFE6EDF3);
-  static const Color textSecondary = Color(0xFF8B949E);
-  static const Color dividerColor = Color(0xFF30363D);
+  static const Color primaryColor = Color(0xFF00E5FF); // Cian más vibrante
+  static const Color primaryDark = Color(0xFF00B8D4);
+  static const Color accentColor = Color(0xFF18FFFF);
+  
+  // Fondo casi negro para el modo oscuro profundo
+  static const Color backgroundColor = Color(0xFF050505); 
+  static const Color surfaceColor = Color(0xFF121212);
+  
+  // Color de las tarjetas, ligeramente más claro que el fondo
+  static const Color cardColor = Color(0xFF1E1E1E); 
+  
+  static const Color textPrimary = Color(0xFFFFFFFF);
+  static const Color textSecondary = Color(0xFFA0A0A0);
+  static const Color dividerColor = Color(0xFF2C2C2C);
 
-  /// Gradiente principal utilizado en el hero y elementos destacados.
+  /// Gradiente principal
   static const LinearGradient primaryGradient = LinearGradient(
-    colors: [primaryColor, Color(0xFF0097A7)],
+    colors: [primaryColor, Color(0xFF00B8D4)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
@@ -30,7 +35,7 @@ class AppTheme {
       scaffoldBackgroundColor: backgroundColor,
 
       // Esquema de colores basado en el color primario
-      colorScheme: ColorScheme.dark(
+      colorScheme: const ColorScheme.dark(
         primary: primaryColor,
         secondary: accentColor,
         surface: surfaceColor,
@@ -41,24 +46,25 @@ class AppTheme {
 
       // Configuración del AppBar
       appBarTheme: const AppBarTheme(
-        backgroundColor: surfaceColor,
+        backgroundColor: backgroundColor, // Mismo color que el fondo
         elevation: 0,
-        centerTitle: true,
+        centerTitle: false,
         titleTextStyle: TextStyle(
           color: textPrimary,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
           letterSpacing: 0.5,
         ),
-        iconTheme: IconThemeData(color: primaryColor),
+        iconTheme: IconThemeData(color: textPrimary), // Iconos blancos por defecto
       ),
 
       // Configuración de Cards
       cardTheme: CardThemeData(
         color: cardColor,
-        elevation: 2,
+        elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(color: dividerColor, width: 1),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
@@ -84,13 +90,13 @@ class AppTheme {
       textTheme: const TextTheme(
         headlineLarge: TextStyle(
           color: textPrimary,
-          fontSize: 28,
+          fontSize: 32,
           fontWeight: FontWeight.bold,
           letterSpacing: -0.5,
         ),
         headlineMedium: TextStyle(
           color: textPrimary,
-          fontSize: 22,
+          fontSize: 24,
           fontWeight: FontWeight.w600,
         ),
         titleLarge: TextStyle(

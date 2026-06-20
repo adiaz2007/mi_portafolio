@@ -29,11 +29,11 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.dividerColor),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
