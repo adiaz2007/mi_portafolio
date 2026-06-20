@@ -48,11 +48,7 @@ class SignatureScreen extends StatelessWidget {
         const CircleAvatar(
           radius: 60,
           backgroundColor: AppTheme.cardColor,
-          child: Icon(
-            Icons.person,
-            size: 80,
-            color: AppTheme.primaryColor,
-          ),
+          backgroundImage: AssetImage('assets/images/profile.jpg'),
         ),
         const SizedBox(height: 24),
 

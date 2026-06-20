@@ -26,11 +26,7 @@ class AboutTab extends StatelessWidget {
               child: const CircleAvatar(
                 radius: 75,
                 backgroundColor: AppTheme.cardColor,
-                child: Icon(
-                  Icons.person,
-                  size: 80,
-                  color: AppTheme.primaryColor,
-                ),
+                backgroundImage: AssetImage('assets/images/profile.jpg'),
               ),
             ),
           ),
